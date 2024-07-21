@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import Archived from './components/Archived';
 import Bin from "./components/Bin";
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import {  Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
     const [title, setTitle] = useState("");

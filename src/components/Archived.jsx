@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
 function Archived({archivedNotes=[],onremove}) {
     const deleteNote=(entry)=>{
         onremove(entry);
