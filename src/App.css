@@ -1,0 +1,133 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns with a minimum size */
+    gap: 20px; /* Spacing between items */
+    padding: 10px;
+    max-width: 1200px; /* Fixed width for the container */
+    margin: 0 auto; /* Center container horizontally */
+}
+
+.entry {
+    position: relative; /* Ensure that child elements are positioned relative to this container */
+    padding: 20px; /* Padding for content */
+    background-color: #ffffff; /* Background color for cleaner look */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transition for hover effect */
+}
+
+.entry:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.entry div {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Spacing between title and note */
+}
+
+.entry h4 {
+    margin: 0;
+    color: #666;
+    font-weight: normal; /* Adjusted font-weight for better readability */
+}
+
+/* Delete symbol positioned at the top right corner */
+.delete-symbol {
+    position: absolute;
+    top: 10px; /* Distance from the top edge */
+    right: 10px; /* Distance from the right edge */
+    font-size: 1.5rem; /* Size of the symbol */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: #333; /* Default color */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.delete-symbol:hover {
+    color: #007BFF; /* Color change on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.delete-symbol:focus {
+    outline: none; /* Remove default outline */
+    color: #0056b3; /* Color change on focus */
+}
+
+/* Symbol container inside the entry */
+.symbols {
+    display: flex;
+    gap: 10px; /* Spacing between symbols */
+    position: absolute;
+    bottom: 10px; /* Align symbols to the bottom */
+    right: 10px; /* Align symbols to the right */
+}
+
+/* Individual symbol styles */
+.symbol {
+    font-size: 1.5rem; /* Size of the symbols */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+    color: #333; /* Default color for symbols */
+}
+
+.symbol:hover {
+    color: #007BFF; /* Color change on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.symbol:focus {
+    outline: none; /* Remove default outline */
+    color: #0056b3; /* Color change on focus */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust minimum size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Further adjust minimum size for very small screens */
+    }
+}
+
+input, button {
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input {
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+    padding: 12px 20px; /* Padding for better spacing */
+    font-size: 1rem; /* Font size for better readability */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center align text */
+    display: inline-block; /* Inline block to respect padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add a focus ring */
+}

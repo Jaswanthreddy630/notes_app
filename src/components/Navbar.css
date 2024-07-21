@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
+    background-color: #007BFF; /* Background color for the navbar */
+    padding: 10px 20px; /* Padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.navbar ul {
+    list-style: none; /* Remove list bullets */
+    display: flex; /* Horizontal layout */
+    gap: 20px; /* Spacing between links */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0; /* Remove default margin */
+}
+
+.navbar a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.navbar a:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+.navbar h1 {
+    margin: 0; /* Remove default margin */
+    color: white; /* Text color */
+}
