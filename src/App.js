@@ -50,11 +50,20 @@ function App() {
     const removeHandle=(e)=>{
         setDelete(deletedNotes.filter(x => x!==e));
     }
+
+    const removeArchive=(e)=>{
+        setArchive(archivedNotes.filter(x => x!==e));
+    }
+
+    const deletePinNote=(entry)=>{
+        setPin(pinnedNotes.filter(x=>x!==entry));
+    }
+
     return (
         <div>
             <Navbar/>
             <Routes>
-                <Route path="/archived" element={<Archived archivedNotes={archivedNotes} />}/>
+                <Route path="/archived" element={<Archived archivedNotes={archivedNotes} onremove={removeArchive} />}/>
                 <Route path="/bin" element={<Bin deletedNotes={deletedNotes} onRemove={removeHandle}/>}/>
             </Routes>
 
@@ -87,6 +96,7 @@ function App() {
                         <div className="container">
                             {pinnedNotes.map((entry, index) => (
                                 <div key={index} className="entry">
+                                    <span className="delete-symbol" onClick={() => deletePinNote(entry)} title="Delete">&#10006;</span> 
                                     <div>{entry.title}</div>
                                     <h4>{entry.note}</h4>
                                 </div>
